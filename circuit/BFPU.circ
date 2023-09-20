@@ -78,7 +78,7 @@
       <a name="label" val="RST"/>
     </comp>
     <comp lib="0" loc="(1210,740)" name="Constant">
-      <a name="width" val="8"/>
+      <a name="width" val="15"/>
     </comp>
     <comp lib="0" loc="(1260,370)" name="Constant">
       <a name="width" val="8"/>
@@ -265,7 +265,7 @@
     <comp lib="1" loc="(990,460)" name="NOT Gate"/>
     <comp lib="2" loc="(1440,840)" name="Multiplexer">
       <a name="select" val="2"/>
-      <a name="width" val="8"/>
+      <a name="width" val="15"/>
     </comp>
     <comp lib="2" loc="(1480,350)" name="Multiplexer">
       <a name="select" val="2"/>
@@ -275,16 +275,22 @@
       <a name="select" val="2"/>
       <a name="width" val="8"/>
     </comp>
-    <comp lib="3" loc="(1360,780)" name="Subtractor"/>
-    <comp lib="3" loc="(1370,730)" name="Adder"/>
+    <comp lib="3" loc="(1360,780)" name="Subtractor">
+      <a name="width" val="15"/>
+    </comp>
+    <comp lib="3" loc="(1370,730)" name="Adder">
+      <a name="width" val="15"/>
+    </comp>
     <comp lib="3" loc="(1380,380)" name="Subtractor"/>
     <comp lib="3" loc="(1390,330)" name="Adder"/>
     <comp lib="3" loc="(150,590)" name="Adder"/>
     <comp lib="4" loc="(1610,260)" name="RAM">
+      <a name="addrWidth" val="15"/>
       <a name="appearance" val="logisim_evolution"/>
     </comp>
     <comp lib="4" loc="(1650,810)" name="Register">
       <a name="appearance" val="logisim_evolution"/>
+      <a name="width" val="15"/>
     </comp>
     <comp lib="4" loc="(170,130)" name="ROM">
       <a name="appearance" val="logisim_evolution"/>
