@@ -238,9 +238,8 @@
       <a name="size" val="30"/>
     </comp>
     <comp lib="1" loc="(1440,580)" name="NOT Gate"/>
-    <comp lib="1" loc="(1980,200)" name="NAND Gate">
+    <comp lib="1" loc="(1970,200)" name="OR Gate">
       <a name="inputs" val="8"/>
-      <a name="size" val="30"/>
     </comp>
     <comp lib="1" loc="(640,510)" name="NOT Gate">
       <a name="facing" val="south"/>
@@ -290,7 +289,8 @@
     <comp lib="4" loc="(170,130)" name="ROM">
       <a name="appearance" val="logisim_evolution"/>
       <a name="contents">addr/data: 8 3
-6 31*0 6 15*0 7 15*0 7
+2 3 2 6 5 3 7 25*0
+6 15*0 7 15*0 7
 </a>
       <a name="dataWidth" val="3"/>
     </comp>
@@ -310,33 +310,33 @@
     <comp lib="5" loc="(330,1200)" name="Hex Digit Display">
       <a name="labelvisible" val="true"/>
     </comp>
-    <comp lib="8" loc="(1094,512)" name="Text">
+    <comp lib="8" loc="(1090,510)" name="Text">
       <a name="text" val="&gt; / ptr++"/>
     </comp>
-    <comp lib="8" loc="(1101,402)" name="Text">
+    <comp lib="8" loc="(1100,400)" name="Text">
       <a name="text" val=". / set"/>
     </comp>
-    <comp lib="8" loc="(1106,607)" name="Text">
+    <comp lib="8" loc="(1105,605)" name="Text">
       <a name="text" val="&lt; / ptr--"/>
     </comp>
     <comp lib="8" loc="(1120,200)" name="Text">
       <a name="text" val="+ / cell[ptr]++"/>
     </comp>
-    <comp lib="8" loc="(1121,292)" name="Text">
+    <comp lib="8" loc="(1120,290)" name="Text">
       <a name="text" val="- / cell[ptr]--"/>
     </comp>
-    <comp lib="8" loc="(1138,171)" name="Text">
+    <comp lib="8" loc="(1135,170)" name="Text">
       <a name="font" val="SansSerif bold 23"/>
       <a name="text" val="ALU"/>
     </comp>
-    <comp lib="8" loc="(1679,785)" name="Text">
+    <comp lib="8" loc="(1675,785)" name="Text">
       <a name="text" val="pointer register"/>
     </comp>
-    <comp lib="8" loc="(1688,764)" name="Text">
+    <comp lib="8" loc="(1685,760)" name="Text">
       <a name="font" val="SansSerif bold 23"/>
       <a name="text" val="Brainfuck Logik"/>
     </comp>
-    <comp lib="8" loc="(1696,228)" name="Text">
+    <comp lib="8" loc="(1695,225)" name="Text">
       <a name="font" val="SansSerif bold 23"/>
       <a name="text" val="Zellenblock"/>
     </comp>
@@ -344,33 +344,33 @@
       <a name="font" val="SansSerif bold 23"/>
       <a name="text" val="Prozessorlogik"/>
     </comp>
-    <comp lib="8" loc="(275,657)" name="Text">
+    <comp lib="8" loc="(275,655)" name="Text">
       <a name="text" val="Instruction Pointer"/>
     </comp>
-    <comp lib="8" loc="(287,94)" name="Text">
+    <comp lib="8" loc="(285,90)" name="Text">
       <a name="font" val="SansSerif bold 23"/>
       <a name="text" val="Programmspeicher"/>
     </comp>
-    <comp lib="8" loc="(299,876)" name="Text">
+    <comp lib="8" loc="(295,875)" name="Text">
       <a name="font" val="SansSerif bold 23"/>
       <a name="text" val="I/O Anschlüsse"/>
     </comp>
-    <comp lib="8" loc="(306,1044)" name="Text">
+    <comp lib="8" loc="(305,1040)" name="Text">
       <a name="text" val="Eingabevektor"/>
     </comp>
-    <comp lib="8" loc="(308,971)" name="Text">
+    <comp lib="8" loc="(305,970)" name="Text">
       <a name="text" val="RESET"/>
     </comp>
-    <comp lib="8" loc="(310,1129)" name="Text">
+    <comp lib="8" loc="(310,1125)" name="Text">
       <a name="text" val="Ausgabevektor"/>
     </comp>
-    <comp lib="8" loc="(312,907)" name="Text">
+    <comp lib="8" loc="(310,905)" name="Text">
       <a name="text" val="Procssor clock"/>
     </comp>
-    <comp lib="8" loc="(453,334)" name="Text">
+    <comp lib="8" loc="(450,330)" name="Text">
       <a name="text" val="Load address"/>
     </comp>
-    <comp lib="8" loc="(561,312)" name="Text">
+    <comp lib="8" loc="(560,310)" name="Text">
       <a name="font" val="SansSerif bold 23"/>
       <a name="text" val="Branch"/>
     </comp>
@@ -514,7 +514,8 @@
     <wire from="(1930,330)" to="(1930,370)"/>
     <wire from="(1930,370)" to="(1940,370)"/>
     <wire from="(1930,390)" to="(1940,390)"/>
-    <wire from="(1980,200)" to="(2000,200)"/>
+    <wire from="(1960,200)" to="(1970,200)"/>
+    <wire from="(1970,200)" to="(2000,200)"/>
     <wire from="(2000,350)" to="(2050,350)"/>
     <wire from="(2050,380)" to="(2050,390)"/>
     <wire from="(2050,380)" to="(2060,380)"/>
