@@ -12,7 +12,3 @@ Subtraction: cell(ptr) = cell(ptr) _ cell(ptr x 1)
 Using: cell(ptr); cell(ptr x 1)
 
 > [ <->- ] <
-
-Conditional: if (cell(ptr) greater 0) then do stuff
-
-[ > *do stuff here* < [-] ]
