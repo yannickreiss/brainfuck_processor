@@ -5,15 +5,14 @@ CFLAGS	= -Wall
 LDFLAGS =
 SRCDIR	= src/
 INCLUDE	= include/
-OBJECTS	= compilefuck.o
-
+OBJECTS	= tokenizer.o compilefuck.o 
 all: $(BIN)
 
 $(BIN): $(OBJECTS)
 	$(CC) -o $(BIN) $(OBJECTS) $(LDFLAGS)
 
 %.o: $(SRCDIR)%.c
-	$(CC) $(CFLAGS) -o $@ $<
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 run: $(BIN)
 	./$(BIN)
