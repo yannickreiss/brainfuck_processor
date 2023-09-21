@@ -74,10 +74,19 @@ int main (int argc, char** argv) {
         exit(EXIT_FAILURE);
     }
 
-    extractTokens(buffer, tokens);
+    int token_count = extractTokens(buffer, tokens);
+    if (!token_count) {
+        (void)printf("WARNING: The program is empty!\n");
+    }
 
     /* end of lifetime for buffer */
     free( buffer );
+
+    /* Analyze the code for errors and warnings. */
+    int scan_result = analyze(tokens);
+    if (scan_result < 0) {
+        exit(scan_result);
+    }
 
     /* Just print the tokens as example. */
     for (char* index = tokens; *index; index++) {
