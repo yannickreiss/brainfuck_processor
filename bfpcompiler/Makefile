@@ -5,7 +5,7 @@ CFLAGS	= -Wall
 LDFLAGS =
 SRCDIR	= src/
 INCLUDE	= include/
-OBJECTS	= tokenizer.o compilefuck.o 
+OBJECTS	= analyzer.o tokenizer.o compilefuck.o
 all: $(BIN)
 
 $(BIN): $(OBJECTS)
