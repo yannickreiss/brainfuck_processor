@@ -1,4 +1,4 @@
-BIN		= FUUUUUCK
+BIN		= bfc
 CC		= gcc
 LD		= ld
 CFLAGS	= -Wall
