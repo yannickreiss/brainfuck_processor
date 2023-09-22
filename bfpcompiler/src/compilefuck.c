@@ -124,15 +124,6 @@ int main (int argc, char** argv) {
         exit(EXIT_FAILURE);
     }
 
-    /* DEBUG START */
-
-    for (int i = 0; i < 533; i++) {
-        (void)printf("%c", binary[i]);
-    }
-
-
-    /* DEBUG END */
-
     if (fprintf(fout, "%s", binary) < 0) {
         (void)printf("ERROR: Could not write to file %s!\n", filename_compiled);
         exit(EXIT_FAILURE);
