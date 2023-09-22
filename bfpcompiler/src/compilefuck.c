@@ -16,14 +16,30 @@
 int main (int argc, char** argv) {
     int rv = EXIT_SUCCESS;
 
-    /* check for right amount of cl arguments (1 filename at the moment) */
-    if (argc != 2) {
+    char* filename_compiled = "brainfuck.bin";
+
+    /* check for right amount of cl arguments (even number of arguments (including environment variable)) */
+    if (argc % 2) {
         exit(EXIT_FAILURE);
     }
 
     /* Parse arguments */
-    char* filename = argv[1];
+    char* filename;
+    char* device = "logisim";
 
+    for (int i = 1; i < argc; i++) {
+        if (argv[i][0] == '-') {
+            switch (argv[i][1]) {
+                case 'o': filename_compiled = argv[i+1];break;
+                case 'd': device = argv[i+1];break;
+                default: printf("ERROR: unknown argument: %c\n", argv[i][1]);exit(EXIT_FAILURE);
+            }
+            i++;
+        } else {
+            filename = argv[i];
+            break;
+        }
+    }
 
     /* read file into buffer */
     FILE* fd = 0; /* File descriptor */
@@ -64,6 +80,8 @@ int main (int argc, char** argv) {
         }
     }
 
+    fclose(fd);
+
     /* extract tokens from buffer */
     char* tokens;
     /* Allocate memory for tokens */
@@ -84,15 +102,43 @@ int main (int argc, char** argv) {
 
     /* Analyze the code for errors and warnings. */
     int scan_result = analyze(tokens);
+    /* Exit if analyzer detects errors. */
     if (scan_result < 0) {
         exit(scan_result);
     }
 
-    /* Just print the tokens as example. */
-    for (char* index = tokens; *index; index++) {
-        (void)printf("%c", *index);
+    /* Translate into binary */
+    char* binary = assemble(device, tokens);
+    if (binary <= 0) {
+        (void)printf("ERROR: Error during assembling step!\n");
+        exit(EXIT_FAILURE);
     }
-    (void)printf("\n");
+    free(tokens);
+
+    /* Write to file. */
+    FILE* fout = 0; /* File descriptor */
+    fout = fopen(filename_compiled, "w");
+
+    if (!fout) {
+        (void)printf("ERROR: Could not open file %s!\n", filename_compiled);
+        exit(EXIT_FAILURE);
+    }
+
+    /* DEBUG START */
+
+    for (int i = 0; i < 533; i++) {
+        (void)printf("%c", binary[i]);
+    }
+
+
+    /* DEBUG END */
+
+    if (fprintf(fout, "%s", binary) < 0) {
+        (void)printf("ERROR: Could not write to file %s!\n", filename_compiled);
+        exit(EXIT_FAILURE);
+    }
+
+    fclose(fout);
 
     return rv;
 }
