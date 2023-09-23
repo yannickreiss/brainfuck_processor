@@ -18,17 +18,12 @@ int main (int argc, char** argv) {
 
     char* filename_compiled = "brainfuck.bin";
 
-    /* check for right amount of cl arguments (even number of arguments (including environment variable)) */
-    if (argc % 2) {
-        exit(EXIT_FAILURE);
-    }
-
     /* Parse arguments */
     char* filename;
     char* device = "logisim";
 
     for (int i = 1; i < argc; i++) {
-        if (argv[i][0] == '-') {
+        if (argv[i][0] == '-' && ((i+1) < argc)) {
             switch (argv[i][1]) {
                 case 'o': filename_compiled = argv[i+1];break;
                 case 'd': device = argv[i+1];break;
