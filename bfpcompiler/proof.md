@@ -83,5 +83,3 @@ are implemented memory safe.
 ## Every program, which is accepted by the compiler without error is working on the processor.
 
 ## The compiled binaries are working the same way as the provided code.
-
-## The compiler is detecting any wrong argument or code.
