@@ -60,6 +60,16 @@ architecture arch of bfpu is
         );
     end component;
 
+    component program_counter
+        port(
+            clk	    :	in	std_logic;
+		    enable	:	in	std_logic;
+		    jmp	    :	in	std_logic;
+		    pc_in	:	in	std_logic_vector(7 downto 0);
+		    pc_out	:	out	std_logic_vector(7 downto 0)
+        );
+    end component;
+
     signal s_clk            :   std_logic;
     signal s_instrAddr      :   std_logic_vector(7 downto 0);
     signal s_instruction    :   std_logic_vector(2 downto 0);
@@ -71,6 +81,10 @@ architecture arch of bfpu is
 
     signal s_enable_cells   :   std_logic;
     signal s_enable_ptr     :   std_logic;
+
+    signal s_enable_pc      :   std_logic;
+    signal s_jmp_pc         :   std_logic;
+    signal s_jmp_addr_pc    :   std_logic_vector(7 downto 0);
 
 begin
 
@@ -112,6 +126,15 @@ begin
         address     => s_ptr_out,
         new_cell    => s_cell_in,
         old_cell    => s_cell_out
+    );
+
+    pc : program_counter
+    port map(
+        clk     => s_clk,
+        enable  => s_enable_pc,
+        jmp     => s_jmp_pc,
+        pc_in   => s_jmp_addr_pc,
+        pc_out  => s_instrAddr
     );
 
 end arch;
