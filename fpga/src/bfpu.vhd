@@ -70,9 +70,23 @@ architecture arch of bfpu is
         );
     end component;
 
+    component branch
+        port(
+            clk	        :	in	std_logic;
+		    instruction	:	in	std_logic_vector(2 downto 0);
+		    instr_addr	:	in	std_logic_vector(7 downto 0);
+            cell_value  :   in  std_logic_vector(7 downto 0);
+
+            skip        :   out std_logic;
+		    pc_enable	:	out	std_logic;
+		    pc_out	    :   out	std_logic_vector(7 downto 0)
+        );
+    end component;
+
     signal s_clk            :   std_logic;
     signal s_instrAddr      :   std_logic_vector(7 downto 0);
     signal s_instruction    :   std_logic_vector(2 downto 0);
+    signal s_instrAddr_branch : std_logic_vector(7 downto 0);
 
     signal s_cell_out       :   std_logic_vector(7 downto 0);
     signal s_cell_in        :   std_logic_vector(7 downto 0);
@@ -85,6 +99,10 @@ architecture arch of bfpu is
     signal s_enable_pc      :   std_logic;
     signal s_jmp_pc         :   std_logic;
     signal s_jmp_addr_pc    :   std_logic_vector(7 downto 0);
+
+    signal s_skip           :   std_logic;
+    signal s_enable_cells_o :   std_logic;
+    signal s_enable_ptr_o   :   std_logic;
 
 begin
 
@@ -106,8 +124,8 @@ begin
 
         new_cell	=>	s_cell_in,
         new_pointer	=>	s_ptr_in,
-        enable_cell	=>	s_enable_cells,
-        enable_ptr	=>	s_enable_ptr,
+        enable_cell	=>	s_enable_cells_o,
+        enable_ptr	=>	s_enable_ptr_o,
         extern_out	=>  led
     );
 
@@ -136,5 +154,19 @@ begin
         pc_in   => s_jmp_addr_pc,
         pc_out  => s_instrAddr
     );
+
+    branch_bf : branch
+    port map(
+        clk         => s_clk,
+        instruction => s_instruction,
+        instr_addr  => s_instrAddr,
+        cell_value  => s_cell_out,
+        skip        => s_skip,
+        pc_enable   => s_enable_pc,
+        pc_out      => s_instrAddr_branch
+    );
+
+    s_enable_ptr    <= s_skip and s_enable_ptr_o;
+    s_enable_cells  <= s_skip and s_enable_cells_o;
 
 end arch;
