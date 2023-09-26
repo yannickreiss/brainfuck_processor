@@ -50,6 +50,16 @@ architecture arch of bfpu is
         );
     end component;
 
+    component cellblock
+        port(
+            clk         :   in  std_logic;
+            enable      :   in  std_logic;
+            address     :   in  std_logic_vector(15 downto 0);
+            new_cell    :   in  std_logic_vector(7 downto 0);
+            old_cell    :   out std_logic_vector(7 downto 0)
+        );
+    end component;
+
     signal s_clk            :   std_logic;
     signal s_instrAddr      :   std_logic_vector(7 downto 0);
     signal s_instruction    :   std_logic_vector(2 downto 0);
@@ -93,6 +103,15 @@ begin
         enable_ptr  => s_enable_ptr,
         new_ptr     => s_ptr_in,
         old_ptr     => s_ptr_out
+    );
+
+    cellblock_bf : cellblock
+    port map(
+        clk         => s_clk,
+        enable      => s_enable_cells,
+        address     => s_ptr_out,
+        new_cell    => s_cell_in,
+        old_cell    => s_cell_out
     );
 
 end arch;
