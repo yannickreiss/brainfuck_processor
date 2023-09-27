@@ -78,6 +78,7 @@ architecture arch of bfpu is
             cell_value  :   in  std_logic_vector(7 downto 0);
 
             skip        :   out std_logic;
+            jump        :   out std_logic;
 		    pc_enable	:	out	std_logic;
 		    pc_out	    :   out	std_logic_vector(7 downto 0)
         );
@@ -86,7 +87,6 @@ architecture arch of bfpu is
     signal s_clk            :   std_logic;
     signal s_instrAddr      :   std_logic_vector(7 downto 0);
     signal s_instruction    :   std_logic_vector(2 downto 0);
-    signal s_instrAddr_branch : std_logic_vector(7 downto 0);
 
     signal s_cell_out       :   std_logic_vector(7 downto 0);
     signal s_cell_in        :   std_logic_vector(7 downto 0);
@@ -162,8 +162,9 @@ begin
         instr_addr  => s_instrAddr,
         cell_value  => s_cell_out,
         skip        => s_skip,
+        jump        => s_jmp_pc,
         pc_enable   => s_enable_pc,
-        pc_out      => s_instrAddr_branch
+        pc_out      => s_jmp_addr_pc
     );
 
     s_enable_ptr    <= s_skip and s_enable_ptr_o;
