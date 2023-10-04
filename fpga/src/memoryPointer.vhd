@@ -19,7 +19,7 @@ end ptr;
 
 -- Architecture implement_ptr of ptr:
 architecture implement_ptr of ptr is
-    signal reg : std_logic_vector(15 downto 0);
+    signal reg : std_logic_vector(15 downto 0) := (others => '0');
 begin
 
     -- Process Write  set new_ptr

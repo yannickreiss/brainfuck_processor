@@ -28,12 +28,14 @@ architecture implementation of bfpu_tb is
 
 begin
 
-    uut : entity bfpu
+    uut : entity work.bfpu(arch)
         port map (
             clk     =>  clk,
             sw      =>  sw,
             debug   =>  debug,
             led     =>  led);
+
+    sw      <= "00110011";
 
     -- Clock process definitions
     clk_process :   process

@@ -31,6 +31,7 @@ architecture impl of branch is
     signal nested           : std_logic_vector(7 downto 0) := (others => '0'); -- count nested loops
     signal skip_internal    : std_logic := '0';
     signal stack_ptr        : std_logic_vector(7 downto 0) := (others => '0');
+    signal pc_enable_internal : std_logic := '1';
 
 begin
 
@@ -38,61 +39,55 @@ begin
     p_branch : process (clk, skip_internal, instruction, cell_value)
     begin
         if rising_edge(clk) then
+
             if instruction = "110" and unsigned(cell_value) = 0 and unsigned(nested) = 0 and skip_internal = '0' then
                 skip_internal <= '1';
             end if;
-        end if;
 
-        -- set skip to false
-        if rising_edge(clk) then
+            -- set skip to false
             if instruction = "111" and unsigned(nested) = 0 and skip_internal = '1' then
                 skip_internal <= '0';
             end if;
-        end if;
 
-        -- Process p_nest : raise nest by one as [ is passed
-        if rising_edge(clk) then
+            -- Process p_nest : raise nest by one as [ is passed
             if instruction = "110" and skip_internal = '1' then
                 nested <= std_logic_vector(unsigned(nested) + 1);
             end if;
-        end if;
 
-        -- Process p_unnest : lower nest, as ] is passed
-        if rising_edge(clk) then
+            -- Process p_unnest : lower nest, as ] is passed
             if instruction = "111" and unsigned(nested) > 0 and skip_internal = '1' then
                 nested <= std_logic_vector(unsigned(nested) - 1);
             end if;
-        end if;
 
-        -- Process p_push : raise stack and push address
-        if rising_edge(clk) and instruction = "110" and unsigned(cell_value) > 0 and skip_internal = '0' then
-            if pc_enable = '0' then
-                -- restore push_state and push address
-                addr_stack(to_integer(unsigned(stack_ptr))) <= instr_addr;
-                pc_enable <= '1';
-            else
-                -- raise stack, disable pc and unset push_state
-                stack_ptr <= std_logic_vector(unsigned(stack_ptr) + 1);
-                pc_enable <= '0';
+            -- Process p_push : raise stack and push address
+            if instruction = "110" and unsigned(cell_value) > 0 and skip_internal = '0' then
+
+                if pc_enable_internal = '0' then
+                    -- restore push_state and push address
+                    addr_stack(to_integer(unsigned(stack_ptr))) <= instr_addr;
+                    pc_enable_internal <= '1';
+                else
+                    -- raise stack, disable pc and unset push_state
+                    stack_ptr <= std_logic_vector(unsigned(stack_ptr) + 1);
+                    pc_enable_internal <= '0';
+                end if;
             end if;
-        end if;
 
-        -- Process p_pop : read address to jump address and lower stack
-        if rising_edge(clk) and instruction = "111" and unsigned(cell_value) > 0 and skip_internal = '0' then
-            if pc_enable = '0' then
-                -- set address to pc_out, disable pc and unset push_state
-                pc_out <= addr_stack(to_integer(unsigned(stack_ptr)));
-                pc_enable <= '1';
-            else
-                -- set pc to enabled, restore push_state and lower stack
-                pc_enable <= '0';
-                stack_ptr <= std_logic_vector(unsigned(stack_ptr) - 1);
+            -- Process p_pop : read address to jump address and lower stack
+            if instruction = "111" and unsigned(cell_value) > 0 and skip_internal = '1' then
+                if pc_enable_internal = '0' then
+                    -- set address to pc_out, disable pc and unset push_state
+                    -- pc_out <= addr_stack(to_integer(unsigned(stack_ptr))); TODO: restore if error with continuous assignment
+                    pc_enable_internal <= '1';
+                else
+                    -- set pc to enabled, restore push_state and lower stack
+                    pc_enable_internal <= '0';
+                    stack_ptr <= std_logic_vector(unsigned(stack_ptr) - 1);
+                end if;
             end if;
-        end if;
 
-        -- regulate jump
-        if rising_edge(clk) then
-            if instruction = "111" and unsigned(cell_value) > 0 and skip_internal = '0' and pc_enable = '1' then
+            -- regulate jump
+            if instruction = "111" and unsigned(cell_value) > 0 and skip_internal = '0' and pc_enable_internal = '1' then
                 jump <= '1';
             else
                 jump <= '0';
@@ -100,6 +95,8 @@ begin
         end if;
     end process;
 
-    skip <= skip_internal;
+    skip        <=  skip_internal;
+    pc_enable   <=  pc_enable_internal;
+    pc_out      <= addr_stack(to_integer(unsigned(stack_ptr)));
 
 end impl;
