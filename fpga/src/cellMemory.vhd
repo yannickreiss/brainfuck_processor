@@ -28,7 +28,7 @@ architecture arch of cellblock is
 
 begin
     -- Process clk_read
-    clk_read : process (clk) -- runs only, when clk changed
+    clk_read : process (clk, enable) -- runs only, when clk changed
     begin
 
         if rising_edge(clk) and enable = '1' then

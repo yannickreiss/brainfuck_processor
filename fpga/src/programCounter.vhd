@@ -23,7 +23,7 @@ architecture pc of program_counter is
 begin
 
     -- Process count
-    count : process (clk, enable, jmp) -- runs only, when clk, enable, jmp changed
+    count : process (clk, enable) -- runs only, when clk, enable, jmp changed
     begin
         if rising_edge(clk) and enable = '1' then
             if jmp = '1' then

@@ -11,6 +11,7 @@ entity bfpu is
     port(
         clk     :   in  std_logic;                      -- board clock
         sw      :   in  std_logic_vector(7 downto 0);   -- Input for instruction ,
+        debug   :   out std_logic_vector(7 downto 0);   -- Value of currently selected logic cell.
         led     :   out std_logic_vector(7 downto 0)    -- Output for instruction .
     );
 end bfpu;
@@ -169,5 +170,6 @@ begin
 
     s_enable_ptr    <= s_skip and s_enable_ptr_o;
     s_enable_cells  <= s_skip and s_enable_cells_o;
+    debug           <= s_cell_out;
 
 end arch;

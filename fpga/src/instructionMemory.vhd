@@ -19,9 +19,10 @@ end instructionMemory;
 
 -- Architecture arch of instructionMemory: read on every clock cycle to instruction.
 architecture arch of instructionMemory is
+    
     type imem is array(0 to 255) of std_logic_vector(2 downto 0);
-
-    signal memory : imem := (b"000", b"001", b"010", b"011", b"100", b"101", b"110", b"111", others => "000");
+    -- [+.]
+    signal memory : imem := (b"110", b"010", b"101", b"111", others => "000");
 begin
     -- Process clk_read
     clk_read : process (clk) -- runs only, when clk changed

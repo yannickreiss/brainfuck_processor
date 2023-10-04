@@ -23,7 +23,7 @@ architecture implement_ptr of ptr is
 begin
 
     -- Process Write  set new_ptr
-    write : process (clk) -- runs only, when clk changed
+    write : process (clk, enable_ptr) -- runs only, when clk changed
     begin
         if rising_edge(clk) and enable_ptr = '1' then
             reg <= new_ptr;
