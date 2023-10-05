@@ -82,4 +82,65 @@ are implemented memory safe.
 
 ## Every program, which is accepted by the compiler without error is working on the processor.
 
+The 8 operators of brainfuck can be divided into two different groups:
+
+- < > + - , .
+- [  ]
+
+The operators of the first group can be used
+
+- in any order
+- with any amount
+
+Following those conditions, there is no need for a syntax check, as every order is a valid program.
+
+This is different with the second group, which holds the loop operators.
+Those need to
+
+- be included in a certain order: [  ]
+- be included in the code with the same amount: $w_[ = w_]$
+
+The code must be checked for the right amount and order of loop operators.
+This is done by using the following code:
+```c
+for (char* cursor = token; *cursor; cursor++) {
+
+    /* Analyze form */
+    if (*cursor == '[') {
+        rv += 1;
+    } else if (*cursor == ']') {
+        rv -= 1;
+    }
+
+    /* Check value for errors. */
+    if (rv < 0) {
+        (void)printf("ERROR!\n");
+        rv = EXIT_FAILURE;
+        break;
+    }
+
+    /* check for nested loops */
+    if (rv > 1) {
+        (void)printf("WARNING!\n");
+    }
+}
+
+if (rv > 0) {
+    (void)printf("ERROR!\n");
+    rv = EXIT_FAILURE;
+}
+```
+
+The value of rv is checked for the following conditions:
+
+|Condition|Reaction|Description|
+|---------|--------|-----------|
+| $<0$    |ERROR   |A closing bracket is ending a non-existing loop. There is no address to jump back to.|
+| $>2$    |WARNING |A nested bracket is opened. Although this is not wrong for brainfuck, my circuit does currently not support this.|
+| $>0$    |ERROR   |This is checked after the loop. If the value of rv is greater than zero, a bracket was not closed.|
+
+The last check maybe could be handled as warning, because the program can be run in a loop, even if it would never end.
+
+By doing this check on the given program, it's safe to assume, that every program, that is accepted by the compiler, can be run.
+
 ## The compiled binaries are working the same way as the provided code.

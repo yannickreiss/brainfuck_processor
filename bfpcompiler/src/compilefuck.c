@@ -25,8 +25,8 @@ int main (int argc, char** argv) {
     for (int i = 1; i < argc; i++) {
         if (argv[i][0] == '-' && ((i+1) < argc)) {
             switch (argv[i][1]) {
-                case 'o': filename_compiled = argv[i+1];break;
-                case 'd': device = argv[i+1];break;
+                case 'o': if (argv[i+1]) filename_compiled = argv[i+1];break;
+                case 'd': if (argv[i+1]) device = argv[i+1];break;
                 default: printf("ERROR: unknown argument: %c\n", argv[i][1]);exit(EXIT_FAILURE);
             }
             i++;
