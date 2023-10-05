@@ -1,6 +1,6 @@
 CHDL		=	ghdl
 FLAGS		=	--std=08
-STOP		=	900000ns
+STOP		=	90000ns
 
 all:	tb/tb_bfpu.vhd src/bfpu.vhd
 	$(CHDL) -a $(FLAGS) src/alu.vhd src/branch.vhd src/cellMemory.vhd src/instructionMemory.vhd src/memoryPointer.vhd src/programCounter.vhd src/bfpu.vhd tb/tb_bfpu.vhd
