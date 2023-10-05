@@ -93,3 +93,9 @@ The proofs cover three claims:
 - The compiler is working absolutely memory safe
 - Every program accepted by the compiler is a valid brainfuck program
 - The compiled program is working in the same way, as the entered brainfuck code
+
+## Repository location
+
+The original repository with the most recent code is located at [My personal gitlab](https://gitlab.schnick.duckdns.org/schnick/bfpu).
+
+As this instance has some problems with staying online, the master-branch is mirrored to Github at [this repository](https://github.com/yannickreiss/brainfuck_processor).
