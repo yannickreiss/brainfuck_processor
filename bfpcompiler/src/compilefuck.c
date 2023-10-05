@@ -20,7 +20,7 @@ int main (int argc, char** argv) {
 
     /* Parse arguments */
     char* filename;
-    char* device = "logisim";
+    char* device = "FPGA";
 
     for (int i = 1; i < argc; i++) {
         if (argv[i][0] == '-' && ((i+1) < argc)) {
