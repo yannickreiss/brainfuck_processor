@@ -21,7 +21,6 @@ architecture arch of bfpu is
 
     component instructionMemory
         port(
-            clk             :   in  std_logic;
             instructionAddr :   in  std_logic_vector(7 downto 0);
             instruction     :   out std_logic_vector(2 downto 0)
         );
@@ -74,6 +73,7 @@ architecture arch of bfpu is
     component branch
         port(
             clk	        :	in	std_logic;
+            state       :   in  std_logic;
 		    instruction	:	in	std_logic_vector(2 downto 0);
 		    instr_addr	:	in	std_logic_vector(7 downto 0);
             cell_value  :   in  std_logic_vector(7 downto 0);
@@ -86,32 +86,58 @@ architecture arch of bfpu is
     end component;
 
     signal s_clk            :   std_logic;
-    signal s_instrAddr      :   std_logic_vector(7 downto 0);
-    signal s_instruction    :   std_logic_vector(2 downto 0);
+    signal s_in             :   std_logic_vector(7 downto 0) := (others => '0');
+    signal s_out            :   std_logic_vector(7 downto 0) := (others => '0');
 
-    signal s_cell_out       :   std_logic_vector(7 downto 0);
-    signal s_cell_in        :   std_logic_vector(7 downto 0);
-    signal s_ptr_out        :   std_logic_vector(15 downto 0);
-    signal s_ptr_in         :   std_logic_vector(15 downto 0);
+    signal s_instrAddr      :   std_logic_vector(7 downto 0) := "00000000";
+    signal s_instruction    :   std_logic_vector(2 downto 0) := "000";
 
-    signal s_enable_cells   :   std_logic;
-    signal s_enable_ptr     :   std_logic;
+    signal s_cell_out       :   std_logic_vector(7 downto 0) := (others => '0');
+    signal s_cell_in        :   std_logic_vector(7 downto 0) := (others => '0');
+    signal s_ptr_out        :   std_logic_vector(15 downto 0) := (others => '0');
+    signal s_ptr_in         :   std_logic_vector(15 downto 0) := (others => '0');
 
-    signal s_enable_pc      :   std_logic;
-    signal s_jmp_pc         :   std_logic;
-    signal s_jmp_addr_pc    :   std_logic_vector(7 downto 0);
+    signal s_enable_cells   :   std_logic := '0';
+    signal s_enable_ptr     :   std_logic := '0';
 
-    signal s_skip           :   std_logic;
-    signal s_enable_cells_o :   std_logic;
-    signal s_enable_ptr_o   :   std_logic;
+    signal s_enable_pc      :   std_logic := '1';
+    signal s_jmp_pc         :   std_logic := '0';
+    signal s_jmp_addr_pc    :   std_logic_vector(7 downto 0) := "00000000";
+
+    signal s_skip           :   std_logic := '0';
+    signal s_enable_cells_o :   std_logic := '0';
+    signal s_enable_ptr_o   :   std_logic := '0';
+
+    signal processor_state  :   std_logic := '0'; -- 0: execute; 1: write back
 
 begin
 
+    -- clock and state logic
     s_clk <= clk;
+    -- Process state  change state between execute and write back
+    state : process (s_clk) -- runs only, when s_clk changed
+    begin
+        if rising_edge(s_clk) then
+            processor_state <= not processor_state;
+        end if;
+    end process;
+
+    -- Process in_out  set in- and output on clk high and exec/write back
+    in_out : process (s_clk) -- runs only, when s_clk changed
+    begin
+        if rising_edge(s_clk) then
+            if processor_state = '1' then
+                led     <= s_out;
+            else
+                s_in      <= sw;
+            end if;
+        end if;
+    end process;
+
+
 
     instrMemory : instructionMemory
     port map(
-        clk => s_clk,
         instructionAddr => s_instrAddr,
         instruction => s_instruction
     );
@@ -121,13 +147,13 @@ begin
         instruction	=>	s_instruction,
         old_cell	=>	s_cell_out,
         old_pointer =>	s_ptr_out,
-        extern_in	=>	sw,
+        extern_in	=>	s_in,
 
         new_cell	=>	s_cell_in,
         new_pointer	=>	s_ptr_in,
         enable_cell	=>	s_enable_cells_o,
         enable_ptr	=>	s_enable_ptr_o,
-        extern_out	=>  led
+        extern_out	=>  s_out
     );
 
     ptr_bf : ptr
@@ -150,7 +176,7 @@ begin
     pc : program_counter
     port map(
         clk     => s_clk,
-        enable  => s_enable_pc,
+        enable  => s_enable_pc and processor_state,
         jmp     => s_jmp_pc,
         pc_in   => s_jmp_addr_pc,
         pc_out  => s_instrAddr
@@ -159,6 +185,7 @@ begin
     branch_bf : branch
     port map(
         clk         => s_clk,
+        state       => processor_state,
         instruction => s_instruction,
         instr_addr  => s_instrAddr,
         cell_value  => s_cell_out,
@@ -168,8 +195,8 @@ begin
         pc_out      => s_jmp_addr_pc
     );
 
-    s_enable_ptr    <= s_skip and s_enable_ptr_o;
-    s_enable_cells  <= s_skip and s_enable_cells_o;
+    s_enable_ptr    <= not s_skip and s_enable_ptr_o and processor_state;
+    s_enable_cells  <= not s_skip and s_enable_cells_o and processor_state;
     debug           <= s_cell_out;
 
 end arch;

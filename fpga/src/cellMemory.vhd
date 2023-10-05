@@ -22,7 +22,7 @@ end cellblock;
 
 -- Architecture arch of cellblock: read on every clock cycle to cell.
 architecture arch of cellblock is
-    type empty is array(0 to 65536) of std_logic_vector(7 downto 0);
+    type empty is array(0 to 65535) of std_logic_vector(7 downto 0);
 
     signal memory : empty := (others => (others => '0'));
 

@@ -36,35 +36,35 @@ begin
                 new_pointer <= std_logic_vector(unsigned(old_pointer) + 1);
 
                 new_cell    <= old_cell;
-                buffer_out  <= "00000000";
+                -- buffer_out  <= "00000000";
             when "001" =>
                 enable_cell <= '0';
                 enable_ptr  <= '1';
                 new_pointer <= std_logic_vector(unsigned(old_pointer) - 1);
 
                 new_cell    <= old_cell;
-                buffer_out  <= "00000000";
+                -- buffer_out  <= "00000000";
             when "010" =>
                 enable_cell <= '1';
                 enable_ptr  <= '0';
                 new_cell    <= std_logic_vector(unsigned(old_cell) + 1);
 
                 new_pointer <= old_pointer;
-                buffer_out  <= "00000000";
+                -- buffer_out  <= "00000000";
             when "011" =>
                 enable_cell <= '1';
                 enable_ptr  <= '0';
                 new_cell    <= std_logic_vector(unsigned(old_cell) - 1);
 
                 new_pointer <= old_pointer;
-                buffer_out  <= "00000000";
+                -- buffer_out  <= "00000000";
             when "100" =>
                 enable_cell <= '1';
                 enable_ptr  <= '0';
                 new_cell    <= extern_in;
 
                 new_pointer <= old_pointer;
-                buffer_out  <= "00000000";
+                -- buffer_out  <= "00000000";
             when "101" =>
                 enable_cell <= '0';
                 enable_ptr  <= '0';
@@ -78,7 +78,7 @@ begin
 
                 new_pointer <= old_pointer;
                 new_cell    <= old_cell;
-                buffer_out  <= "00000000";
+                -- buffer_out  <= "00000000";
         end case;
     end process;
 

@@ -10,7 +10,6 @@ use ieee.numeric_std.all;
 entity instructionMemory is
 
     port(
-        clk                 :   in  std_logic;      -- clock with speed of board clock; Read on clock cycle
         instructionAddr     :   in  std_logic_vector(7 downto 0); -- We start with 256 instructions
 
         instruction         :   out std_logic_vector(2 downto 0)  -- instruction in current cell
@@ -19,20 +18,21 @@ end instructionMemory;
 
 -- Architecture arch of instructionMemory: read on every clock cycle to instruction.
 architecture arch of instructionMemory is
-    
+
     type imem is array(0 to 255) of std_logic_vector(2 downto 0);
-    -- [+.]
-    signal memory : imem := (b"110", b"010", b"101", b"111", others => "000");
+    signal memory : imem := (b"010", b"110", b"000", b"010", b"101", b"001", b"111", others => "000");
 begin
     -- Process clk_read
-    clk_read : process (clk) -- runs only, when clk changed
-    begin
+--    clk_read : process (clk) -- runs only, when clk changed
+--    begin
+--
+--        if rising_edge(clk) then
+--
+--            instruction <= memory(to_integer(unsigned(instructionAddr)));
+--
+--        end if;
+--    end process;
 
-        if rising_edge(clk) then
-
-            instruction <= memory(to_integer(unsigned(instructionAddr)));
-
-        end if;
-    end process;
+    instruction <= memory(to_integer(unsigned(instructionAddr)));
 
 end arch;
