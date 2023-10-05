@@ -1,0 +1,171 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Thu Oct  5 15:20:21 2023
+# Process ID: 33785
+# Current directory: /home/nick/Documents/Programming/Brainfuck/BPFU/bfpcompiler
+# Command line: vivado
+# Log file: /home/nick/Documents/Programming/Brainfuck/BPFU/bfpcompiler/vivado.log
+# Journal file: /home/nick/Documents/Programming/Brainfuck/BPFU/bfpcompiler/vivado.jou
+# Running On: lilith, OS: Linux, CPU Frequency: 1687.184 MHz, CPU Physical cores: 4, Host memory: 8201 MB
+#-----------------------------------------------------------
+start_gui
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kc705/1.6/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc707/1.4/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc709/1.8/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.2 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.1 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.1 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_a/1.1/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es_revb:part0:1.1 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/rev_b/1.1/board.xml as part xcve2802-vsvh1760-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_mpsoc/1.0/board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_rfsoc/1.0/board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158:part0:1.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/production/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.1 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.1/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.2 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.1 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.3 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.3/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.1 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.1 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.4/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.4/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.2/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.3/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.4/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1275/1.0/board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1285/1.0/board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/production/2.0/board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+open_project /home/nick/brainfuck/brainfuck.xpr
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/nick/brainfuck/brainfuck.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/run/media/nick/7434c313-c900-4822-b144-4e79f39ed56a/home/nick/AUR/vivado/pkg/vivado/opt/Xilinx/Vivado/2023.1/data/ip'.
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 7702.613 ; gain = 228.406 ; free physical = 667 ; free virtual = 12643
+update_compile_order -fileset sources_1
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/nick/brainfuck/brainfuck.srcs/utils_1/imports/synth_1/bfpu.dcp with file /home/nick/brainfuck/brainfuck.runs/synth_1/bfpu.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Oct  5 15:23:43 2023] Launched synth_1...
+Run output will be captured here: /home/nick/brainfuck/brainfuck.runs/synth_1/runme.log
+[Thu Oct  5 15:23:43 2023] Launched impl_1...
+Run output will be captured here: /home/nick/brainfuck/brainfuck.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Thu Oct  5 15:27:31 2023] Launched synth_1...
+Run output will be captured here: /home/nick/brainfuck/brainfuck.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Thu Oct  5 15:34:29 2023] Launched synth_1...
+Run output will be captured here: /home/nick/brainfuck/brainfuck.runs/synth_1/runme.log
+[Thu Oct  5 15:34:29 2023] Launched impl_1...
+Run output will be captured here: /home/nick/brainfuck/brainfuck.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Thu Oct  5 15:38:03 2023] Launched synth_1...
+Run output will be captured here: /home/nick/brainfuck/brainfuck.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Thu Oct  5 15:38:50 2023] Launched synth_1...
+Run output will be captured here: /home/nick/brainfuck/brainfuck.runs/synth_1/runme.log
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7a100tcsg324-1
+Top: bfpu
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 8538.523 ; gain = 373.828 ; free physical = 593 ; free virtual = 10906
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-9112] actual for formal port 'enable' is neither a static name nor a globally static expression [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/bfpu.vhd:179]
+INFO: [Synth 8-638] synthesizing module 'bfpu' [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/bfpu.vhd:20]
+INFO: [Synth 8-3491] module 'instructionMemory' declared at '/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/instructionMemory.vhd:10' bound to instance 'instrMemory' of component 'instructionMemory' [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/bfpu.vhd:139]
+INFO: [Synth 8-638] synthesizing module 'instructionMemory' [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/instructionMemory.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'instructionMemory' (0#1) [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/instructionMemory.vhd:20]
+INFO: [Synth 8-3491] module 'alu' declared at '/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/alu.vhd:10' bound to instance 'alu_entity' of component 'alu' [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/bfpu.vhd:145]
+INFO: [Synth 8-638] synthesizing module 'alu' [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/alu.vhd:26]
+INFO: [Synth 8-256] done synthesizing module 'alu' (0#1) [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/alu.vhd:26]
+INFO: [Synth 8-3491] module 'ptr' declared at '/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/memoryPointer.vhd:10' bound to instance 'ptr_bf' of component 'ptr' [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/bfpu.vhd:159]
+INFO: [Synth 8-638] synthesizing module 'ptr' [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/memoryPointer.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'ptr' (0#1) [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/memoryPointer.vhd:21]
+INFO: [Synth 8-3491] module 'cellblock' declared at '/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/cellMemory.vhd:11' bound to instance 'cellblock_bf' of component 'cellblock' [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/bfpu.vhd:167]
+INFO: [Synth 8-638] synthesizing module 'cellblock' [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/cellMemory.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'cellblock' (0#1) [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/cellMemory.vhd:24]
+INFO: [Synth 8-3491] module 'program_counter' declared at '/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/programCounter.vhd:10' bound to instance 'pc' of component 'program_counter' [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/bfpu.vhd:176]
+INFO: [Synth 8-638] synthesizing module 'program_counter' [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/programCounter.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'program_counter' (0#1) [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/programCounter.vhd:21]
+INFO: [Synth 8-3491] module 'branch' declared at '/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/branch.vhd:12' bound to instance 'branch_bf' of component 'branch' [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/bfpu.vhd:185]
+INFO: [Synth 8-638] synthesizing module 'branch' [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/branch.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'branch' (0#1) [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/branch.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'bfpu' (0#1) [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/src/bfpu.vhd:20]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 8640.492 ; gain = 475.797 ; free physical = 485 ; free virtual = 10803
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 8655.336 ; gain = 490.641 ; free physical = 471 ; free virtual = 10790
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 8655.336 ; gain = 490.641 ; free physical = 471 ; free virtual = 10790
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8655.336 ; gain = 0.000 ; free physical = 471 ; free virtual = 10790
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/constrainits.xdc]
+Finished Parsing XDC File [/home/nick/Documents/Programming/Brainfuck/BPFU/fpga/constrainits.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 8730.094 ; gain = 0.000 ; free physical = 444 ; free virtual = 10768
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 8831.926 ; gain = 667.230 ; free physical = 344 ; free virtual = 10682
+23 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 8831.926 ; gain = 962.332 ; free physical = 344 ; free virtual = 10682
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] 
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] 
+launch_runs impl_1 -jobs 4
+[Thu Oct  5 15:40:25 2023] Launched impl_1...
+Run output will be captured here: /home/nick/brainfuck/brainfuck.runs/impl_1/runme.log

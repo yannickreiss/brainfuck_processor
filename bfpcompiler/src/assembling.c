@@ -95,7 +95,6 @@ static char* intoVHDL (char* tokens) {
     }
 
     /* This is the closing term. */
-    binary[pos++] = '(';
     binary[pos++] = 'o';
     binary[pos++] = 't';
     binary[pos++] = 'h';
@@ -104,10 +103,11 @@ static char* intoVHDL (char* tokens) {
     binary[pos++] = 's';
     binary[pos++] = '=';
     binary[pos++] = '>';
-    binary[pos++] = '\'';
+    binary[pos++] = '"';
     binary[pos++] = '0';
-    binary[pos++] = '\'';
-    binary[pos++] = ')';
+    binary[pos++] = '0';
+    binary[pos++] = '0';
+    binary[pos++] = '"';
 
     /* Close initial memory. */
     binary[pos++] = ')';
