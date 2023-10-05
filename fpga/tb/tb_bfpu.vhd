@@ -23,7 +23,7 @@ architecture implementation of bfpu_tb is
     -- output
     signal debug    :   std_logic_vector(7 downto 0);
     signal led      :   std_logic_vector(7 downto 0);
-    
+
     constant clk_period : time := 10 ns;
 
 begin
@@ -35,7 +35,7 @@ begin
             debug   =>  debug,
             led     =>  led);
 
-    sw      <= "00110011";
+    sw      <= "00001011";
 
     -- Clock process definitions
     clk_process :   process
