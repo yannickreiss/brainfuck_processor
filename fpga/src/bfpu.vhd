@@ -73,6 +73,7 @@ architecture arch of bfpu is
     component branch
         port(
             clk	        :	in	std_logic;
+            state       :   in  std_logic;
 		    instruction	:	in	std_logic_vector(2 downto 0);
 		    instr_addr	:	in	std_logic_vector(7 downto 0);
             cell_value  :   in  std_logic_vector(7 downto 0);
@@ -85,8 +86,8 @@ architecture arch of bfpu is
     end component;
 
     signal s_clk            :   std_logic;
-    signal s_in             :   std_logic_vector(7 downto 0);
-    signal s_out            :   std_logic_vector(7 downto 0);
+    signal s_in             :   std_logic_vector(7 downto 0) := (others => '0');
+    signal s_out            :   std_logic_vector(7 downto 0) := (others => '0');
 
     signal s_instrAddr      :   std_logic_vector(7 downto 0) := "00000000";
     signal s_instruction    :   std_logic_vector(2 downto 0) := "000";
@@ -184,6 +185,7 @@ begin
     branch_bf : branch
     port map(
         clk         => s_clk,
+        state       => processor_state,
         instruction => s_instruction,
         instr_addr  => s_instrAddr,
         cell_value  => s_cell_out,
