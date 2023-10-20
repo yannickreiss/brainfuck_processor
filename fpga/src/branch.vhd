@@ -58,7 +58,9 @@ begin
                 if instruction = "110" then
                     nested <= std_logic_vector(unsigned(nested) + 1);
                 end if;
+            end if;
 
+            if state = '1' and skip_internal = '1' then
                 -- nested loop ended
                 if instruction = "111" then
                     nested <= std_logic_vector(unsigned(nested) - 1);
