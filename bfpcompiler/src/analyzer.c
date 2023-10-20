@@ -6,8 +6,9 @@
  *  @brief Check for errors and warnings.
  *
  *	@param char* token
+ *	@param char* device
  */
-int analyze (char* token) {
+int analyze (char* token, char* device) {
     int rv = 0;
     int position = 0;
 
@@ -28,8 +29,8 @@ int analyze (char* token) {
             break;
         }
 
-        /* check for nested loops */
-        if (rv > 1) {
+        /* check for nested loops in case of using the logisim model */
+        if (rv > 1 && !strcmp(device, "logisim")) {
             (void)printf("Warning on token %d\n", position);
             (void)printf("WARNING: Nested loops are not supported on all versions of the target device!\n");
         }

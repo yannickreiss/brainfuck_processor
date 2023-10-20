@@ -38,6 +38,9 @@ int extractTokens (char* buffer, char* tokens) {
 
     }
 
+    /* Terminate the array using a null character */
+    tokens[tokens_found] = 0; /* same as \0 */
+
     rv = tokens_found;
 
     return rv;
