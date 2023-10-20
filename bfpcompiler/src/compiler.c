@@ -96,7 +96,7 @@ int main (int argc, char** argv) {
     free( buffer );
 
     /* Analyze the code for errors and warnings. */
-    int scan_result = analyze(tokens);
+    int scan_result = analyze(tokens, device);
     /* Exit if analyzer detects errors. */
     if (scan_result < 0) {
         exit(scan_result);
