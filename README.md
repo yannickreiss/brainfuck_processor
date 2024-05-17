@@ -44,11 +44,11 @@ The instructions are direct translations of the 8 brainfuck operands:
 
 Every instruction is calculated in two clock cycles, or one instruction cycle.
 
------------------------------------------------------------------------------------------------
+---
 
 ## The compiler
 
-The compiler located in the directory *bfpcompiler* can be used to create the machine code for the different destinations.
+The compiler located in the directory _bfpcompiler_ can be used to create the machine code for the different destinations.
 
 ### Building the compiler
 
@@ -59,7 +59,7 @@ cd bfpcompiler
 make
 ```
 
-The executable will be located in the directory *bfpcompiler*.
+The executable will be located in the directory _bfpcompiler_.
 
 ### Usage
 
@@ -85,17 +85,8 @@ The compiler reacts to the following problems:
 The last warning occurs, because the logisim implementation of the processor is not capable of processing nested loops.
 It can be safely ignored on other devices.
 
-### Code is correct by proof
-
-The proof is located at *bfpcompiler/proof.md* and will be expanded on the whole compiler.
-The proofs cover three claims:
-
-- The compiler is working absolutely memory safe
-- Every program accepted by the compiler is a valid brainfuck program
-- The compiled program is working in the same way, as the entered brainfuck code
-
 ## Repository location
 
-The original repository with the most recent code is located at [My personal gitlab](https://gitlab.schnick.duckdns.org/schnick/bfpu).
-
-As this instance has some problems with staying online, the master-branch is mirrored to Github at [this repository](https://github.com/yannickreiss/brainfuck_processor).
+The original repository with the most recent code is located at [My personal git server](https://git.nickr.eu/yannickreiss/brainfuck_processor).
+Access can be requested via [e-mail](mailto:schnick@nickr.eu).
+Alternatively, the master branch is mirrored to github here [https://github.com/yannickreiss/brainfuck_processor].
